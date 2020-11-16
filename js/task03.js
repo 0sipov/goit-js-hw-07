@@ -21,9 +21,10 @@ const images = [
 ];
 
 const createGallery = () => {
-    const galleryRef = document.getElementById("gallery");
+  const galleryRef = document.getElementById("gallery");
+  galleryRef.classList.add("flex");
     const createGalleryItem = ({ url, alt }) => {
-        return `<li><img src="${url}" alt="${alt}" width="500"></li>`
+        return `<li><img src="${url}" alt="${alt}" ></li>`
     }
     const galleryMarkup = images.reduce((markup, item) => 
          markup + createGalleryItem(item), ""
