@@ -1,6 +1,4 @@
-
 //*
-
 
 const images = [
   {
@@ -21,15 +19,16 @@ const images = [
 ];
 
 const createGallery = () => {
-  const galleryRef = document.getElementById("gallery");
-  galleryRef.classList.add("flex");
-    const createGalleryItem = ({ url, alt }) => {
-        return `<li><img src="${url}" alt="${alt}" ></li>`
-    }
-    const galleryMarkup = images.reduce((markup, item) => 
-         markup + createGalleryItem(item), ""
-);
-    galleryRef.insertAdjacentHTML("afterbegin", galleryMarkup)
-}
+  const galleryRef = document.getElementById('gallery');
+  galleryRef.classList.add('flex');
+  const createGalleryItem = ({ url, alt }) => {
+    return `<li><img src="${url}" alt="${alt}" ></li>`;
+  };
+  const galleryMarkup = images.reduce(
+    (markup, item) => markup + createGalleryItem(item),
+    '',
+  );
+  galleryRef.insertAdjacentHTML('afterbegin', galleryMarkup);
+};
 
 createGallery();
